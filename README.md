@@ -29,7 +29,7 @@ Confirmed the expected inverse relationship between FICO score and interest rate
 ## Baseline Model: Decision Tree
 A single Decision Tree classifier was trained as a baseline model.
 
-![Decision Tree Report](classification_report_dt.png)
+![Decision Tree Report](classification_report_dtree.png)
 
 - The Decision Tree was easy to interpret but showed signs of overfitting.
 - Performance varied significantly with small changes in the data, highlighting its sensitivity to noise.
