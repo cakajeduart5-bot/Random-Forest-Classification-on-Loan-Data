@@ -26,14 +26,23 @@ Confirmed the expected inverse relationship between FICO score and interest rate
 
 ---
 
+## Baseline Model: Decision Tree
+A single Decision Tree classifier was trained as a baseline model.
+
+![Decision Tree Report](classification_report_dt.png)
+
+- The Decision Tree was easy to interpret but showed signs of overfitting.
+- Performance varied significantly with small changes in the data, highlighting its sensitivity to noise.
+
+---
+
 ## Model Evaluation: Random Forest
-Models were evaluated using a 30% test split, comparing a single Decision Tree with a Random Forest consisting of 600 trees.
+Models were evaluated using a 30% test split, comparing the Decision Tree with a Random Forest consisting of 600 trees.
 
-### 4. Performance Comparison
-The Random Forest model achieved higher and more stable performance than the single Decision Tree.
-
-**Random Forest Classification Report:**  
 ![Random Forest Report](classification_report_rf.png)
+
+- The Random Forest achieved more stable performance than the single Decision Tree.
+- Ensemble averaging reduced variance and improved generalisation.
 
 ---
 
@@ -43,12 +52,13 @@ The Random Forest model achieved higher and more stable performance than the sin
 Feature importance analysis showed that behavioural variables were more influential than static credit scores:
 
 - **Revolving utilisation and installment amount** were the strongest predictors of repayment behaviour.
-- **FICO score** contributed a relatively small proportion of the model’s overall importance in this dataset, despite being a widely used industry metric.
+- **FICO score** contributed a relatively small proportion of the model’s overall importance in this dataset.
 
 ---
 
 ## Key Takeaways
-- Ensemble methods such as Random Forests reduced variance and overfitting compared to a single Decision Tree.
+- Decision Trees are interpretable but prone to overfitting on noisy financial data.
+- Random Forests reduce variance and provide more reliable predictions.
 - Current borrowing behaviour was more informative than historical credit scores alone.
 - Recall for default cases was relatively low, indicating that further tuning (e.g. class weighting or resampling) would be necessary in a real banking environment.
 
